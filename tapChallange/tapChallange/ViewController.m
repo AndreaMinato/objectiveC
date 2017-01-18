@@ -101,6 +101,12 @@
 - (IBAction)buttonPressed:(id)sender{
     
     //creo timer solo se serve
+    
+}
+
+
+-(IBAction)tapGestureRecognizerDidRecognizeTap:(id)sender{
+    NSLog(@"premuti");
     if (_gameTimer==nil) {
         _gameTimer = [NSTimer scheduledTimerWithTimeInterval:GameTimer target:self selector:@selector(timerTick) userInfo:nil repeats:true];
     }
@@ -109,16 +115,18 @@
     _tapCount++;
     
     [self.tapsCountLabel setText:[NSString stringWithFormat:@"%i", _tapCount]];
-    
+
 }
 
 #pragma - mark UI
 
--(void)showLastResult:(int)result{
+-(void)showLastResult:(NSArray *)result{
     
-    if (result>0) {
+    if (result.count>0) {
         
-        NSString *mex = [NSString stringWithFormat:@"Quello di prima ha rotto il cazzo ben %i volte", result];
+        NSNumber *value = result.lastObject;
+        
+        NSString *mex = [NSString stringWithFormat:@"Quelli di prima sono riusciti a rompere il cazzo ben %i volte", value.intValue];
         
         UIAlertController *resultAlertViewController = [UIAlertController alertControllerWithTitle:@"Non vorrai giocare anche tu vero?!" message:mex
                                                                                     preferredStyle:UIAlertControllerStyleAlert];
@@ -135,19 +143,51 @@
 
 #pragma - mark Persistenza
 
--(int)getResults{
-    return [[NSUserDefaults standardUserDefaults]integerForKey:@"TapsCount"];
+-(NSArray *)getResults{
+    
+    NSArray *array =  [Defaults objectForKey:Results];
+    
+    if(array == nil)
+        array=@[];
+    
+    return array;
     
 }
 
 - (void)saveResult{
-    [[NSUserDefaults standardUserDefaults] setInteger:_tapCount forKey:@"TapsCount"];
+    NSMutableArray *resultsArray = [[Defaults objectForKey:Results] mutableCopy];
     
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    if(resultsArray == nil){
+        resultsArray = @[].mutableCopy;
+    }
+    
+    [resultsArray addObject:@(_tapCount)];
+    
+    NSArray* arrayToSave = [resultsArray sortedArrayUsingComparator:^NSComparisonResult(NSNumber * obj1, NSNumber  * obj2) {
+        int value1=obj1.intValue;
+        int value2=obj2.intValue;
+        
+        if(value1==value2)
+            return NSOrderedSame;
+        if(value1<value2)
+            return NSOrderedAscending;
+        return NSOrderedDescending;
+    }];
+    
+    NSLog(@"ARRAY-> %@", arrayToSave);
+    
+    [Defaults setObject:arrayToSave forKey:Results];
+    [Defaults synchronize];
+    
+    
+    
+    /*[[NSUserDefaults standardUserDefaults] setInteger:_tapCount forKey:Results];
+     
+     [[NSUserDefaults standardUserDefaults] synchronize];*/
 }
 
 -(bool)firstAppLaunch{
-    return [[NSUserDefaults standardUserDefaults]boolForKey:@"firstAppLaunch"];
+    return [Defaults boolForKey:FirstAppLaunch];
     
 }
 

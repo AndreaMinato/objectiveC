@@ -17,12 +17,16 @@
 
 - (IBAction)buttonPressed:(id)sender;
 
+
+-(IBAction)tapGestureRecognizerDidRecognizeTap:(id)sender;
+
 #define GameTimer 1
 #define GameTime 3
 
 #define FirstAppLaunch @"YEAH"
+#define Results @"UserSCore"
 
-#define Result "TapsCount"
+#define Defaults [NSUserDefaults standardUserDefaults]
 
 @end
 
