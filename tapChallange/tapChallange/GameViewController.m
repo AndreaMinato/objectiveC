@@ -6,20 +6,24 @@
 //  Copyright © 2017 AndreaITS. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GameViewController.h"
+
+#import "ScoreTableViewController.h"
 
 
 
-@interface ViewController (){
+@interface GameViewController (){
     int _tapCount;
     int _timeCount;
     NSTimer *_gameTimer;
+    
+    UILabel *_label;
     
 }
 
 @end
 
-@implementation ViewController
+@implementation GameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,10 +32,28 @@
     
     [self initGame];
     
+    self.title = @"Tap Sfida";
+    
+    //creo un pulsante che andrò a mettere dentro la navigation bar
+    
+    UIBarButtonItem *scoreButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(scoreButtonPressed)];
+    
+    
+    //imposto il pulsante con l'elemento alla dx della navBar
+    self.navigationItem.rightBarButtonItem = scoreButtonItem;
+    
+    _label = [[UILabel alloc] initWithFrame:CGRectMake(10, 200, 250, 40)];
+    [_label setText:@"Mi piacciono i treni"];
+    [_label setBackgroundColor:[UIColor blueColor]];
+    [_label setTextColor:[UIColor whiteColor]];
+    [_label setFont:[UIFont systemFontOfSize:18]];
+    
+    [self.view addSubview:_label];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [self resumeGame];
     
     if([self firstAppLaunch] == false){
         [[NSUserDefaults standardUserDefaults]setBool:true forKey:FirstAppLaunch];
@@ -44,16 +66,43 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    [UIView animateWithDuration:5 animations:^{
+        [_label setCenter:CGPointMake(300, 500)];
+        [_label setAlpha:0];
+    }];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [self pauseGame];
 }
 
 #pragma - mark created
+
+-(void)pauseGame{
+    if(_gameTimer != nil){
+        [_gameTimer invalidate];
+        _gameTimer = nil;
+    }
+}
+
+-(void)resumeGame{
+    
+    if(_timeCount != 0 && _tapCount>0){
+        if(_gameTimer == nil){
+            _gameTimer = [NSTimer scheduledTimerWithTimeInterval:GameTimer target:self selector:@selector(timerTick) userInfo:nil repeats:true];
+            
+        }
+    }
+    
+}
 
 -(void)initGame{
     _tapCount=0;
     _timeCount=GameTime;
     
     [self.tapsCountLabel setText:@"Tap to play"];
-    [self.timeLabel setText:@"TAP CHALLENGE"];
+    [self.timeLabel setText: @"Sfidami"];
     
 }
 
@@ -115,8 +164,23 @@
     _tapCount++;
     
     [self.tapsCountLabel setText:[NSString stringWithFormat:@"%i", _tapCount]];
-
+    
 }
+
+-(void) scoreButtonPressed{
+    
+    //NSArray *resultArray = [self getResults];
+    
+    ScoreTableViewController *tableViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ScoreTableViewController"];
+    
+    //[tableViewController setResultArray:resultArray];
+    
+    [self.navigationController pushViewController:tableViewController animated:true];
+    
+    tableViewController.delegate = self;
+    
+}
+
 
 #pragma - mark UI
 
@@ -124,7 +188,7 @@
     
     if (result.count>0) {
         
-        NSNumber *value = result.lastObject;
+        NSNumber *value = result.firstObject;
         
         NSString *mex = [NSString stringWithFormat:@"Quelli di prima sono riusciti a rompere il cazzo ben %i volte", value.intValue];
         
@@ -169,7 +233,7 @@
         
         if(value1==value2)
             return NSOrderedSame;
-        if(value1<value2)
+        if(value1>value2)
             return NSOrderedAscending;
         return NSOrderedDescending;
     }];
@@ -191,5 +255,14 @@
     
 }
 
+#pragma mark - ScoreTableViewDelegate
+
+-(NSArray *)ScoreTableViewFetchResults{
+    return [self getResults];
+}
+
+-(void)scoreTableViewDidFetchResults{
+    NSLog(@"TOH");
+}
 
 @end

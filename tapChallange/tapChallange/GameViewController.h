@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScoreTableViewController.h"
 
-@interface ViewController : UIViewController
-
+@interface GameViewController : UIViewController <ScoreTableViewDelegate>
 
 @property (nonatomic,weak) IBOutlet UILabel* tapsCountLabel;
 
@@ -21,7 +21,7 @@
 -(IBAction)tapGestureRecognizerDidRecognizeTap:(id)sender;
 
 #define GameTimer 1
-#define GameTime 3
+#define GameTime 5
 
 #define FirstAppLaunch @"YEAH"
 #define Results @"UserSCore"
