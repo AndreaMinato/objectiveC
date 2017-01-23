@@ -1,26 +1,77 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqi-pJ-cpc">
+                                <rect key="frame" x="16" y="274" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4z-1L-AvS">
+                                <rect key="frame" x="16" y="530" width="80" height="30"/>
+                                <state key="normal" title="Pari"/>
+                                <connections>
+                                    <action selector="pariButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ScN-iw-Zpu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5f-vN-GHj">
+                                <rect key="frame" x="224" y="530" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="gj2-qy-0Hl"/>
+                                </constraints>
+                                <state key="normal" title="Dispari"/>
+                                <connections>
+                                    <action selector="dispariButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xSQ-pu-8mL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qn8-Pu-s6o">
+                                <rect key="frame" x="16" y="20" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Genera"/>
+                                <connections>
+                                    <action selector="generaButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F5a-bf-PLA"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fqi-pJ-cpc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6en-Wj-QvS"/>
+                            <constraint firstItem="g5f-vN-GHj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BGG-c2-Fsc"/>
+                            <constraint firstItem="Fqi-pJ-cpc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="254" id="Fs5-3J-0Xu"/>
+                            <constraint firstItem="Fqi-pJ-cpc" firstAttribute="leading" secondItem="v4z-1L-AvS" secondAttribute="leading" id="NVh-IK-EKe"/>
+                            <constraint firstItem="g5f-vN-GHj" firstAttribute="trailing" secondItem="Fqi-pJ-cpc" secondAttribute="trailing" id="Ntu-a8-fhy"/>
+                            <constraint firstItem="g5f-vN-GHj" firstAttribute="baseline" secondItem="v4z-1L-AvS" secondAttribute="baseline" id="QcV-hP-qN9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="g5f-vN-GHj" secondAttribute="bottom" constant="8" symbolic="YES" id="ljk-d4-vgX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="numberLabel" destination="Fqi-pJ-cpc" id="6GE-ub-fx9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.875" y="138.38028169014083"/>
         </scene>
     </scenes>
 </document>

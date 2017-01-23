@@ -10,6 +10,11 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UILabel *numberLabel;
+
+-(IBAction)pariButtonPressed:(id)sender;
+-(IBAction)dispariButtonPressed:(id)sender;
+-(IBAction)generaButtonPressed:(id)sender;
 
 @end
 
