@@ -21,7 +21,7 @@
 -(IBAction)tapGestureRecognizerDidRecognizeTap:(id)sender;
 
 #define GameTimer 1
-#define GameTime 5
+#define GameTime 30
 
 #define FirstAppLaunch @"YEAH"
 #define Results @"UserSCore"

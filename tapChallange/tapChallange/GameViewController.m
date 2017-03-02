@@ -9,6 +9,7 @@
 #import "GameViewController.h"
 
 #import "ScoreTableViewController.h"
+#import "Score.h"
 
 
 
@@ -42,13 +43,13 @@
     //imposto il pulsante con l'elemento alla dx della navBar
     self.navigationItem.rightBarButtonItem = scoreButtonItem;
     
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(10, 200, 250, 40)];
-    [_label setText:@"Mi piacciono i treni"];
-    [_label setBackgroundColor:[UIColor blueColor]];
-    [_label setTextColor:[UIColor whiteColor]];
-    [_label setFont:[UIFont systemFontOfSize:18]];
-    
-    [self.view addSubview:_label];
+    /* _label = [[UILabel alloc] initWithFrame:CGRectMake(10, 200, 250, 40)];
+     [_label setText:@"Mi piacciono i treni"];
+     [_label setBackgroundColor:[UIColor blueColor]];
+     [_label setTextColor:[UIColor whiteColor]];
+     [_label setFont:[UIFont systemFontOfSize:18]];
+     
+     [self.view addSubview:_label];*/
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -188,8 +189,8 @@
     
     if (result.count>0) {
         
-        NSNumber *value = result.firstObject;
-        
+        NSDictionary *dictionary = result.firstObject;
+        NSNumber *value = [dictionary objectForKey:@"Score"];
         NSString *mex = [NSString stringWithFormat:@"Quelli di prima sono riusciti a rompere il cazzo ben %i volte", value.intValue];
         
         UIAlertController *resultAlertViewController = [UIAlertController alertControllerWithTitle:@"Non vorrai giocare anche tu vero?!" message:mex
@@ -225,11 +226,15 @@
         resultsArray = @[].mutableCopy;
     }
     
-    [resultsArray addObject:@(_tapCount)];
+    Score *score = [[Score alloc]initWithTapsNumber:_tapCount andDate:[NSDate date]];
     
-    NSArray* arrayToSave = [resultsArray sortedArrayUsingComparator:^NSComparisonResult(NSNumber * obj1, NSNumber  * obj2) {
-        int value1=obj1.intValue;
-        int value2=obj2.intValue;
+    NSDictionary *dictionary = @{@"Score": @(score.tapsNumber) , @"Data":score.date};
+    
+    [resultsArray addObject:dictionary];
+    
+    NSArray* arrayToSave = [resultsArray sortedArrayUsingComparator:^NSComparisonResult(NSDictionary * obj1, NSDictionary  * obj2) {
+        int value1=[[obj1 objectForKey:@"Score"] intValue];
+        int value2=[[obj2 objectForKey:@"Score"] intValue];
         
         if(value1==value2)
             return NSOrderedSame;

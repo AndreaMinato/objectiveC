@@ -1,18 +1,20 @@
 //
-//  ScoreTableViewController.m
-//  tapChallange
+//  TableViewController.m
+//  Anagrafiche
 //
-//  Created by AndreaITS on 18/01/17.
+//  Created by AndreaITS on 16/02/17.
 //  Copyright © 2017 AndreaITS. All rights reserved.
 //
 
-#import "ScoreTableViewController.h"
+#import "TableViewController.h"
+#import "Contact.h"
+#import "ViewController.h"
 
-@interface ScoreTableViewController ()
+@interface TableViewController ()
 
 @end
 
-@implementation ScoreTableViewController
+@implementation TableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,20 +22,36 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self setTitle:@"Anagrafiche"];
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"+"
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:self
+                                                            action:@selector(yeah:)];
+    
+    /*UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:<#(UIBarButtonSystemItem)#> target:self action:@selector(yeah:)];
+     */
+    
+    NSMutableArray *buttons = @[].mutableCopy;
+    [buttons addObject:item];
+    
+    // [self.navigationItem setLeftBarButtonItem:item animated:YES];
+    
+    [self setToolbarItems:buttons];
     
     
-    NSArray * array =[self.delegate ScoreTableViewFetchResults];
+    NSMutableArray *array= @[].mutableCopy;
+    for (int i=0; i<100; i++) {
+        
+        NSString *nome = [NSString stringWithFormat:@"Nome %i", i ];
+        NSString *cognome = [NSString stringWithFormat:@"Cognome %i", i ];
+        
+        Contact *contact = [[Contact alloc]initWithName:nome andSurname:cognome];
+        
+        [array addObject:contact];
+    }
     
-    [self setResultArray:array];
-    NSLog(@"%@",array);
-    
-    [self.delegate scoreTableViewDidFetchResults];
-}
-
--(void) viewWillAppear:(BOOL)animated{
-    [self.tableView reloadData];
+    [self setContacts:array];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,36 +66,30 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.resultArray.count;
+    return self.contacts.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ScoreTableViewCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AnagraficheCell" forIndexPath:indexPath];
+    Contact *contact = _contacts[indexPath.row];
     
-    // Configure the cell...
-    
-    NSDictionary *dictionary = self.resultArray[indexPath.row];
-    int score = [[dictionary objectForKey:@"Score"] intValue];
-    NSDate *date =[dictionary objectForKey:@"Data"];
-
-    
-    NSString *text = [NSString stringWithFormat:@"%i - %@", score,date ];
-    
-    [cell.textLabel setText:text];
-    
-    if(indexPath.row==0){
-        cell.backgroundColor = [UIColor yellowColor];
-    }
-    else{
-        cell.backgroundColor = [UIColor redColor];
-    }
-    
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@", [contact showDetail]]];
     
     return cell;
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.destinationViewController isKindOfClass:[ViewController class]]){
+        ViewController *vc = [segue destinationViewController];
+        NSIndexPath *i =[self.tableView indexPathForSelectedRow];
+        [vc setContact:_contacts[i.row]];
+    }
+}
+
+- (void)yeah:(id)sender {
+    NSLog(@"hfgdytfyt");
+}
 
 /*
  // Override to support conditional editing of the table view.

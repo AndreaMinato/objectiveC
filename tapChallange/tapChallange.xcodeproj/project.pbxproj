@@ -13,6 +13,7 @@
 		ED12926E1E291C3600EA89FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED12926C1E291C3600EA89FD /* Main.storyboard */; };
 		ED1292701E291C3600EA89FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED12926F1E291C3600EA89FD /* Assets.xcassets */; };
 		ED1292731E291C3600EA89FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1292711E291C3600EA89FD /* LaunchScreen.storyboard */; };
+		ED9801F91E4E088D004787B5 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9801F81E4E088D004787B5 /* Score.m */; };
 		EDD42EE31E2FB1D70065633B /* ScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD42EE21E2FB1D70065633B /* ScoreTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,8 @@
 		ED12926F1E291C3600EA89FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED1292721E291C3600EA89FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED1292741E291C3600EA89FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED9801F71E4E088D004787B5 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
+		ED9801F81E4E088D004787B5 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
 		EDD42EE11E2FB1D70065633B /* ScoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreTableViewController.h; sourceTree = "<group>"; };
 		EDD42EE21E2FB1D70065633B /* ScoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +75,8 @@
 				ED1292631E291C3600EA89FD /* Supporting Files */,
 				EDD42EE11E2FB1D70065633B /* ScoreTableViewController.h */,
 				EDD42EE21E2FB1D70065633B /* ScoreTableViewController.m */,
+				ED9801F71E4E088D004787B5 /* Score.h */,
+				ED9801F81E4E088D004787B5 /* Score.m */,
 			);
 			path = tapChallange;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			files = (
 				EDD42EE31E2FB1D70065633B /* ScoreTableViewController.m in Sources */,
 				ED12926B1E291C3600EA89FD /* GameViewController.m in Sources */,
+				ED9801F91E4E088D004787B5 /* Score.m in Sources */,
 				ED1292681E291C3600EA89FD /* AppDelegate.m in Sources */,
 				ED1292651E291C3600EA89FD /* main.m in Sources */,
 			);

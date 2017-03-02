@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11FD881A844A2EA000B20F91 /* libPods-Anagrafiche.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A605B1C295DE1E018FD04FEC /* libPods-Anagrafiche.a */; };
+		ED4E04361E559A6B00A7D8B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4E04351E559A6B00A7D8B2 /* main.m */; };
+		ED4E04391E559A6B00A7D8B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4E04381E559A6B00A7D8B2 /* AppDelegate.m */; };
+		ED4E043F1E559A6B00A7D8B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4E043D1E559A6B00A7D8B2 /* Main.storyboard */; };
+		ED4E04411E559A6B00A7D8B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED4E04401E559A6B00A7D8B2 /* Assets.xcassets */; };
+		ED4E04441E559A6B00A7D8B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4E04421E559A6B00A7D8B2 /* LaunchScreen.storyboard */; };
+		ED4E04501E559DD000A7D8B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4E044F1E559DD000A7D8B2 /* ViewController.m */; };
+		ED4E04531E559EAB00A7D8B2 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4E04521E559EAB00A7D8B2 /* TableViewController.m */; };
+		ED4E04561E55A73E00A7D8B2 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4E04551E55A73E00A7D8B2 /* Contact.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		235C09000F413C5E834DB07A /* Pods-Anagrafiche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anagrafiche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Anagrafiche/Pods-Anagrafiche.release.xcconfig"; sourceTree = "<group>"; };
+		A605B1C295DE1E018FD04FEC /* libPods-Anagrafiche.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Anagrafiche.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A945E458BE6090CA7AA5337B /* Pods-Anagrafiche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anagrafiche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Anagrafiche/Pods-Anagrafiche.debug.xcconfig"; sourceTree = "<group>"; };
+		ED4E04311E559A6B00A7D8B2 /* Anagrafiche.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Anagrafiche.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED4E04351E559A6B00A7D8B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ED4E04371E559A6B00A7D8B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ED4E04381E559A6B00A7D8B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ED4E043E1E559A6B00A7D8B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED4E04401E559A6B00A7D8B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED4E04431E559A6B00A7D8B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED4E04451E559A6B00A7D8B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED4E044E1E559DD000A7D8B2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ED4E044F1E559DD000A7D8B2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ED4E04511E559EAB00A7D8B2 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		ED4E04521E559EAB00A7D8B2 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		ED4E04541E55A73E00A7D8B2 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		ED4E04551E55A73E00A7D8B2 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED4E042E1E559A6A00A7D8B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11FD881A844A2EA000B20F91 /* libPods-Anagrafiche.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		540D322297F6C488E9934EB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A945E458BE6090CA7AA5337B /* Pods-Anagrafiche.debug.xcconfig */,
+				235C09000F413C5E834DB07A /* Pods-Anagrafiche.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		78AC5AA562B3C425AEA82E2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A605B1C295DE1E018FD04FEC /* libPods-Anagrafiche.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED4E04281E559A6A00A7D8B2 = {
+			isa = PBXGroup;
+			children = (
+				ED4E04331E559A6B00A7D8B2 /* Anagrafiche */,
+				ED4E04321E559A6B00A7D8B2 /* Products */,
+				540D322297F6C488E9934EB5 /* Pods */,
+				78AC5AA562B3C425AEA82E2D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ED4E04321E559A6B00A7D8B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED4E04311E559A6B00A7D8B2 /* Anagrafiche.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED4E04331E559A6B00A7D8B2 /* Anagrafiche */ = {
+			isa = PBXGroup;
+			children = (
+				ED4E044B1E559DD000A7D8B2 /* Classes */,
+				ED4E04371E559A6B00A7D8B2 /* AppDelegate.h */,
+				ED4E04381E559A6B00A7D8B2 /* AppDelegate.m */,
+				ED4E043D1E559A6B00A7D8B2 /* Main.storyboard */,
+				ED4E04401E559A6B00A7D8B2 /* Assets.xcassets */,
+				ED4E04421E559A6B00A7D8B2 /* LaunchScreen.storyboard */,
+				ED4E04451E559A6B00A7D8B2 /* Info.plist */,
+				ED4E04341E559A6B00A7D8B2 /* Supporting Files */,
+			);
+			path = Anagrafiche;
+			sourceTree = "<group>";
+		};
+		ED4E04341E559A6B00A7D8B2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED4E04351E559A6B00A7D8B2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ED4E044B1E559DD000A7D8B2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ED4E044C1E559DD000A7D8B2 /* Model */,
+				ED4E044D1E559DD000A7D8B2 /* View Controllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		ED4E044C1E559DD000A7D8B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED4E04541E55A73E00A7D8B2 /* Contact.h */,
+				ED4E04551E55A73E00A7D8B2 /* Contact.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ED4E044D1E559DD000A7D8B2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED4E044E1E559DD000A7D8B2 /* ViewController.h */,
+				ED4E044F1E559DD000A7D8B2 /* ViewController.m */,
+				ED4E04511E559EAB00A7D8B2 /* TableViewController.h */,
+				ED4E04521E559EAB00A7D8B2 /* TableViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED4E04301E559A6A00A7D8B2 /* Anagrafiche */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED4E04481E559A6B00A7D8B2 /* Build configuration list for PBXNativeTarget "Anagrafiche" */;
+			buildPhases = (
+				7E9ABB6F6578A9516BF61388 /* [CP] Check Pods Manifest.lock */,
+				ED4E042D1E559A6A00A7D8B2 /* Sources */,
+				ED4E042E1E559A6A00A7D8B2 /* Frameworks */,
+				ED4E042F1E559A6A00A7D8B2 /* Resources */,
+				505346B981B9853FF88FD58D /* [CP] Embed Pods Frameworks */,
+				D9D6E29286882EF7BA8528BF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Anagrafiche;
+			productName = Anagrafiche;
+			productReference = ED4E04311E559A6B00A7D8B2 /* Anagrafiche.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED4E04291E559A6A00A7D8B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = AndreaITS;
+				TargetAttributes = {
+					ED4E04301E559A6A00A7D8B2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = ED4E042C1E559A6A00A7D8B2 /* Build configuration list for PBXProject "Anagrafiche" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED4E04281E559A6A00A7D8B2;
+			productRefGroup = ED4E04321E559A6B00A7D8B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED4E04301E559A6A00A7D8B2 /* Anagrafiche */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED4E042F1E559A6A00A7D8B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED4E04441E559A6B00A7D8B2 /* LaunchScreen.storyboard in Resources */,
+				ED4E04411E559A6B00A7D8B2 /* Assets.xcassets in Resources */,
+				ED4E043F1E559A6B00A7D8B2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		505346B981B9853FF88FD58D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Anagrafiche/Pods-Anagrafiche-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E9ABB6F6578A9516BF61388 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D9D6E29286882EF7BA8528BF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Anagrafiche/Pods-Anagrafiche-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED4E042D1E559A6A00A7D8B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED4E04501E559DD000A7D8B2 /* ViewController.m in Sources */,
+				ED4E04391E559A6B00A7D8B2 /* AppDelegate.m in Sources */,
+				ED4E04561E55A73E00A7D8B2 /* Contact.m in Sources */,
+				ED4E04361E559A6B00A7D8B2 /* main.m in Sources */,
+				ED4E04531E559EAB00A7D8B2 /* TableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ED4E043D1E559A6B00A7D8B2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED4E043E1E559A6B00A7D8B2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED4E04421E559A6B00A7D8B2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED4E04431E559A6B00A7D8B2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED4E04461E559A6B00A7D8B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ED4E04471E559A6B00A7D8B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED4E04491E559A6B00A7D8B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A945E458BE6090CA7AA5337B /* Pods-Anagrafiche.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Anagrafiche/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AndreaITS.Anagrafiche;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ED4E044A1E559A6B00A7D8B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 235C09000F413C5E834DB07A /* Pods-Anagrafiche.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Anagrafiche/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AndreaITS.Anagrafiche;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED4E042C1E559A6A00A7D8B2 /* Build configuration list for PBXProject "Anagrafiche" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED4E04461E559A6B00A7D8B2 /* Debug */,
+				ED4E04471E559A6B00A7D8B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED4E04481E559A6B00A7D8B2 /* Build configuration list for PBXNativeTarget "Anagrafiche" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED4E04491E559A6B00A7D8B2 /* Debug */,
+				ED4E044A1E559A6B00A7D8B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED4E04291E559A6A00A7D8B2 /* Project object */;
+}
