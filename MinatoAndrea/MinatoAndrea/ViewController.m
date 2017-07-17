@@ -43,4 +43,7 @@
     }
 }
 
+-(void)viewDidLayoutSubviews{
+    self.modalButton.layer.cornerRadius = self.modalButton.bounds.size.width/2;
+}
 @end

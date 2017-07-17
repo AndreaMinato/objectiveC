@@ -14,6 +14,7 @@
 
 
 @property (nonatomic,weak)IBOutlet UIButton *pushButton;
+@property (weak, nonatomic) IBOutlet UIButton *modalButton;
 
 @end
 

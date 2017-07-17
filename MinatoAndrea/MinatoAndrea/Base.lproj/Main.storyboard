@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,8 +24,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tow-lQ-UlT">
-                                <rect key="frame" x="125.5" y="318.5" width="124" height="30"/>
+                                <rect key="frame" x="125.5" y="271.5" width="124" height="124"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tow-lQ-UlT" secondAttribute="height" multiplier="1:1" id="jaj-Jr-bvY"/>
+                                </constraints>
                                 <state key="normal" title="Modal">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -33,8 +37,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60B-U3-72v">
-                                <rect key="frame" x="125.5" y="152" width="124" height="30"/>
+                                <rect key="frame" x="125.5" y="105" width="124" height="124"/>
                                 <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="60B-U3-72v" secondAttribute="height" multiplier="1:1" id="nWI-jI-svr"/>
+                                </constraints>
                                 <state key="normal" title="Push">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -46,15 +53,52 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tow-lQ-UlT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.33" id="1kl-0I-Ib5"/>
+                            <constraint firstItem="60B-U3-72v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.5" id="6BA-VD-ecn"/>
                             <constraint firstItem="tow-lQ-UlT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LkW-7t-AJG"/>
                             <constraint firstItem="60B-U3-72v" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.33" id="M1q-fz-1fr"/>
-                            <constraint firstItem="60B-U3-72v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RIy-gb-2Eo"/>
-                            <constraint firstItem="60B-U3-72v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.5" id="oou-98-U1m"/>
+                            <constraint firstItem="60B-U3-72v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.33" id="RIy-gb-2Eo"/>
+                            <constraint firstItem="tow-lQ-UlT" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.33" id="VjE-e7-ifh"/>
+                            <constraint firstItem="60B-U3-72v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iDM-4S-2DL"/>
+                            <constraint firstItem="60B-U3-72v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.5" id="jC8-EA-aM1"/>
                             <constraint firstItem="tow-lQ-UlT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tp7-nA-xgN"/>
+                            <constraint firstItem="60B-U3-72v" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.33" id="xVe-it-gPe"/>
+                            <constraint firstItem="60B-U3-72v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xsm-oP-k6D"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6BA-VD-ecn"/>
+                                <exclude reference="iDM-4S-2DL"/>
+                                <exclude reference="jC8-EA-aM1"/>
+                                <exclude reference="xVe-it-gPe"/>
+                                <exclude reference="xsm-oP-k6D"/>
+                                <exclude reference="VjE-e7-ifh"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="M1q-fz-1fr"/>
+                                <include reference="iDM-4S-2DL"/>
+                                <include reference="jC8-EA-aM1"/>
+                                <include reference="xVe-it-gPe"/>
+                                <exclude reference="1kl-0I-Ib5"/>
+                                <include reference="VjE-e7-ifh"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="6BA-VD-ecn"/>
+                                <include reference="xsm-oP-k6D"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="RIy-gb-2Eo"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Or2-ER-unB"/>
                     <connections>
+                        <outlet property="modalButton" destination="tow-lQ-UlT" id="aGl-qE-aJq"/>
                         <outlet property="pushButton" destination="60B-U3-72v" id="h3F-1Z-dIA"/>
                     </connections>
                 </viewController>
@@ -193,7 +237,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdp-Gd-7qi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1366" y="-298"/>
+            <point key="canvasLocation" x="-1377" y="-298"/>
         </scene>
     </scenes>
 </document>
